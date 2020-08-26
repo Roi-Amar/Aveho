@@ -1,0 +1,17 @@
+"""
+Aveho (by Roi) was built as a small fast side project in order to give a virtual greenscreen with no real greenscreen to the masses.
+Feel free to share and use the code.
+
+Aveho provides you with a virtual green screen you can use in a 3rd party applications like OBS or ZOOM
+(hint: look for the chroma key filters and set it to filter green)
+"""
+
+"""
+Make sure you have pyhon3 installed
+In order to run Aveho you will need Aveho.py, production.py and gs_.mp4
+If for some reason your camera feed won't show try to switch the number of the camera inside production.py file.
+"""
+
+"""
+Once you are done tuning Aveho, you can set the masks windows to not pop up the next time. Check the production.py and put '#' before the window you want to hide.
+"""
