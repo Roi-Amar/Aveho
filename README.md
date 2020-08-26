@@ -29,24 +29,22 @@ have fun!
 ----------------------
 ##      How does it work?
 ----------------------
-```
 Aveho combining mainly two filters of cv2, color differentiation, and baseline image differentiation. When Aveho starts, it notify the user to clear the area, than takes a baseline image of the background. Aveho detects differentiation between the camera feed and the base line image, creating a differentiation mask (that I chose to call a shadow mask). Additionally, Aveho creates a color mask using HSV controls. 
 In the process, both mask are converted to edges masks (using cv2.canny) and going through additional processing, in order to clear image noise and smooth sharp edges.
 Finally, all four masks are combined to create the main mask that differentiate the foreground from the background.
-```
 ![Screenshot](masks.png)
 
 
 ----------------------
 ##      Controls
 ----------------------
-```
 I have created three control panels that control the image processing
+```
 - The first panel controls the shadow mask 
 - The second panel controls the color mask
 - The third panel controls the edge mask
-Set it the way you like. You can keep the settings you chose as default in the beginning of the code.
 ```
+Set it the way you like. You can keep the settings you chose as default in the beginning of the code.
 ![Screenshot](controls.png)
 
 
