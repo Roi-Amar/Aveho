@@ -10,6 +10,8 @@ import time
 cap = cv2.VideoCapture(0)
 """set the capture from the webcam (numbers may differ, if you cant see your camera try to change the number to 
 another one. """
+capWidth = cap.get(cv2.CAP_PROP_FRAME_WIDTH)  # float
+capHeight = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)  # float
 cap2 = cv2.VideoCapture("gs_.mp4")  # green screen video
 # subtract = cv2.createBackgroundSubtractorMOG2(history=40, varThreshold=60, detectShadows=False) # use of motion detection - off by default
 # subtract = cv2.createBackgroundSubtractorKNN(history=1, detectShadows=False) # use of motion detection - off by default
@@ -25,6 +27,7 @@ _, origin = cap.read()
 time.sleep(1)
 _, origin = cap.read()  # capture again because of camera delay
 _, gs = cap2.read()
+gs = cv2.resize(gs, (int(capWidth),int(capHeight)), interpolation = cv2.INTER_AREA) #resizeing the greenscreen to fit camera feed
 originGray = cv2.cvtColor(origin, cv2.COLOR_BGR2GRAY)  # convert to gray to deduct "noise"
 originGray = cv2.GaussianBlur(originGray, (9, 9), 0)  # cast blur to deduct "noise"
 
